@@ -14,7 +14,8 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons';
     const { colorMode, toggleColorMode } = useColorMode();
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'black')} px={4} className={sticky ? "navbar navbar-sticky" : "navbar"} >
+      <Box bg={useColorModeValue(sticky ? "gray.300" : "" , sticky ? "black" : "")} px={4} className={sticky  ? "navbar navbar-sticky" : "navbar"} >
+        
         <Flex h={14} alignItems={'center'} justifyContent={'space-between'}>
 
           <Flex alignItems={'center'}>
@@ -22,10 +23,11 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons';
               <Button onClick={toggleColorMode}>
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
               </Button>
-
+              
             </Stack>
           </Flex>
         </Flex>
+        
       </Box>
     </>
   );
